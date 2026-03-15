@@ -833,6 +833,61 @@ body::after {
   }
 }
 
+
+/* Print-only couple details */
+.print-couple-details {
+  display: none;
+}
+@media print {
+  .print-couple-details {
+    display: block !important;
+    margin: 12px 0 16px;
+    border: 1px solid #c8960c50;
+    border-radius: 4px;
+    background: #fdf6e3 !important;
+    -webkit-print-color-adjust: exact;
+  }
+  .print-couple-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+  .print-person-block {
+    flex: 1;
+    padding: 12px 18px;
+  }
+  .bride-block { border-right: 1px solid #c8960c30; }
+  .print-couple-divider {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: #c8960c;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .print-person-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #8b6040;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .print-person-name {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #4a0505;
+    margin-bottom: 4px;
+  }
+  .print-person-info {
+    font-size: 12px;
+    color: #6b4020;
+    font-style: italic;
+    line-height: 1.6;
+  }
+}
+
 /* Print header (hidden on screen) */
 .print-header {
   display: none;
@@ -963,6 +1018,105 @@ body::after {
 .confirm-no:hover { background: #f0e8d0; border-color: var(--gold); }
 
 .hidden { display: none; }
+
+/* ── NAAM MILAN ── */
+.naam-milan-section {
+  background: var(--section-bg);
+  border: 1px solid #c8960c25;
+  border-radius: 4px;
+  padding: 18px 20px;
+  margin-top: 20px;
+}
+.naam-milan-title {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--maroon);
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #c8960c20;
+}
+.naam-milan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+@media (max-width: 500px) { .naam-milan-grid { grid-template-columns: 1fr; } }
+.naam-input-wrap { position: relative; }
+.naam-input-label {
+  font-size: 10px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  display: block;
+}
+.naam-result-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: white;
+  border: 1px solid #c8960c30;
+  border-radius: 3px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-family: 'Cinzel', serif;
+  color: var(--maroon);
+  min-height: 36px;
+  width: 100%;
+}
+.naam-result-badge .badge-emoji { font-size: 18px; }
+.naam-result-badge .badge-name { font-weight: 700; font-size: 12px; }
+.naam-result-badge .badge-sub  { font-size: 10px; color: var(--text-light); font-style: italic; display: block; margin-top: 1px; }
+
+.naam-compat-box {
+  display: none;
+  padding: 14px 16px;
+  border-radius: 4px;
+  margin-top: 6px;
+  border-left: 4px solid;
+}
+.naam-compat-box.show { display: block; }
+.naam-compat-same  { background: #e8f8e8; border-color: #2d7a2d; }
+.naam-compat-good  { background: #f0f8e0; border-color: #5a7a00; }
+.naam-compat-neutral { background: #fff9e8; border-color: #c8960c; }
+.naam-compat-bad   { background: #fde8e8; border-color: #8b0000; }
+.naam-compat-title {
+  font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; margin-bottom: 4px;
+}
+.naam-compat-detail { font-size: 13px; color: var(--text-mid); font-style: italic; line-height: 1.5; }
+
+.naam-group-ref {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 6px;
+}
+.naam-group-chip {
+  background: white;
+  border: 1px solid #c8960c20;
+  border-radius: 3px;
+  padding: 7px 10px;
+  font-size: 11px;
+}
+.naam-group-chip-head {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: var(--maroon);
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+.naam-group-chip-letters {
+  color: var(--text-light);
+  font-size: 10px;
+  line-height: 1.5;
+}
+@media print {
+  .naam-milan-section { break-inside: avoid; }
+}
+
 </style>
 </head>
 <body>
@@ -988,6 +1142,7 @@ body::after {
   <button class="nav-btn" onclick="showPanel('yoni')">🐾 Yoni Guide</button>
   <button class="nav-btn" onclick="showPanel('nakshatra')">🌟 Nakshatra Ref</button>
   <button class="nav-btn" onclick="showPanel('verdict')">📊 Verdict Scale</button>
+  <button class="nav-btn" onclick="showPanel('naam')">🔤 Naam Milan</button>
 </nav>
 
 <div class="main">
@@ -1065,6 +1220,7 @@ body::after {
       </div>
     </div>
 
+
     <div class="calc-btn-wrap">
       <button class="calc-btn" onclick="calculate()">✦ CALCULATE MILAN ✦</button>
     </div>
@@ -1076,6 +1232,24 @@ body::after {
         <div class="print-header-title">✦ अष्टकूट मिलान — Ashtakoot Kundali Milan Report ✦</div>
         <div class="print-header-sub" id="print-couple-name">Vedic Compatibility Report</div>
       </div>
+
+      <!-- Print-only couple details card -->
+      <div class="print-couple-details" id="print-couple-details">
+        <div class="print-couple-row">
+          <div class="print-person-block bride-block">
+            <div class="print-person-label">🌸 BRIDE — वधू</div>
+            <div class="print-person-name" id="pcd-bride-name">—</div>
+            <div class="print-person-info" id="pcd-bride-info">—</div>
+          </div>
+          <div class="print-couple-divider">✦</div>
+          <div class="print-person-block groom-block">
+            <div class="print-person-label">🌿 GROOM — वर</div>
+            <div class="print-person-name" id="pcd-groom-name">—</div>
+            <div class="print-person-info" id="pcd-groom-info">—</div>
+          </div>
+        </div>
+      </div>
+
       <div class="ornament no-print">✦ ✦ ✦</div>
 
       <div style="overflow-x:auto;">
@@ -1527,6 +1701,82 @@ body::after {
 
 </div><!-- end .main -->
 
+<!-- ═══════════════════════════════════════════════════════════
+     PANEL: NAAM MILAN
+═══════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-naam">
+  <div class="panel-header">
+    <span class="panel-header-icon">🔤</span>
+    <div>
+      <div class="panel-header-title">नाम मिलान — NAAM MILAN</div>
+    </div>
+    <span class="panel-header-sub">वर्णमाला आधारित नाम संगतता</span>
+  </div>
+  <div class="panel-body">
+
+    <div class="teacher-quote" style="margin-bottom:20px;">
+      Your name's first letter belongs to one of 8 Varnamala animal groups. The 5th group from yours is your enemy group. When two names belong to enemy groups, there is friction in daily communication and temperament — even if all 36 Gunas match. Works with both Hindi (वर्णमाला) and English letters.
+    </div>
+
+    <div class="naam-milan-grid" style="max-width:600px; margin-bottom:20px;">
+      <div>
+        <span class="naam-input-label">🌸 Bride's Name First Letter</span>
+        <input class="form-input" id="nm-bride" maxlength="5" placeholder="e.g. प or P"
+          oninput="calcNaamMilan()"
+          style="text-transform:uppercase; font-size:20px; font-weight:700; letter-spacing:3px; text-align:center;">
+        <div class="naam-result-badge" id="nm-bride-badge">
+          <span style="color:#aaa; font-style:italic; font-size:11px;">Enter a letter above</span>
+        </div>
+      </div>
+      <div>
+        <span class="naam-input-label">🌿 Groom's Name First Letter</span>
+        <input class="form-input" id="nm-groom" maxlength="5" placeholder="e.g. र or R"
+          oninput="calcNaamMilan()"
+          style="text-transform:uppercase; font-size:20px; font-weight:700; letter-spacing:3px; text-align:center;">
+        <div class="naam-result-badge" id="nm-groom-badge">
+          <span style="color:#aaa; font-style:italic; font-size:11px;">Enter a letter above</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="naam-compat-box" id="nm-result"></div>
+
+    <!-- All 8 groups reference -->
+    <div style="margin-top:24px;">
+      <div style="font-family:'Cinzel',serif; font-size:13px; color:var(--maroon); letter-spacing:2px; margin-bottom:14px;">📖 सभी 8 वर्णमाला समूह — ALL 8 VARNAMALA GROUPS</div>
+      <div class="naam-group-ref" id="nm-group-ref"></div>
+    </div>
+
+    <!-- Scoring guide -->
+    <div style="margin-top:24px;">
+      <div style="font-family:'Cinzel',serif; font-size:13px; color:var(--maroon); letter-spacing:2px; margin-bottom:12px;">📊 SCORING GUIDE</div>
+      <div class="info-grid">
+        <div class="info-chip">
+          <div class="info-chip-title">✦ Same Group (4/4)</div>
+          <div class="info-chip-body">Both names in same group — deep resonance, same energy wavelength. Very auspicious.</div>
+        </div>
+        <div class="info-chip">
+          <div class="info-chip-title">✅ Friendly Group (3/4)</div>
+          <div class="info-chip-body">Adjacent Varnamala groups — complementary name energies, natural harmony.</div>
+        </div>
+        <div class="info-chip">
+          <div class="info-chip-title">🟡 Neutral Group (2/4)</div>
+          <div class="info-chip-body">Neither friend nor enemy — average compatibility, workable with effort.</div>
+        </div>
+        <div class="info-chip">
+          <div class="info-chip-title">❌ Enemy Group (0/4)</div>
+          <div class="info-chip-body">5th group from yours — clashing name energies, friction in temperament and communication.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-note" style="margin-top:16px;">
+      Naam Milan is supplementary — it is not part of the official 36-Guna score. Use it as an additional check after Ashtakoot Milan. Many astrologers use it especially for nicknames and calling names (चलित नाम), not birth names.
+    </div>
+
+  </div>
+</div>
+
 <!-- CONFIRM NEW MATCH DIALOG -->
 <div class="confirm-overlay" id="confirmOverlay">
   <div class="confirm-box">
@@ -1773,6 +2023,125 @@ const YONI_GUIDE = [
    enemy:"Gaja (Elephant)"},
 ];
 
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// NAAM MILAN (NAME COMPATIBILITY)
+// ═══════════════════════════════════════════════════════════════════════════════
+const NAAM_GROUPS = [
+  { id:0, name:'सर्प',  en:'Sarp (Serpent)',   emoji:'🐍',
+    hindi:['अ','आ','इ','ई','उ','ऊ','ए','ऐ','ओ','औ','अं','अः'],
+    eng:['A','E','I','O','U'],
+    meaning:'Mysterious, deep, magnetic. Intense love, secretive nature.' },
+  { id:1, name:'मूषक', en:'Mushak (Rat)',      emoji:'🐀',
+    hindi:['क','ख','ग','घ','च','छ','ज','झ'],
+    eng:['K','G','C','J'],
+    meaning:'Clever, resourceful, family-oriented. Practical love.' },
+  { id:2, name:'मृग',  en:'Mriga (Deer)',      emoji:'🦌',
+    hindi:['ट','ठ','ड','ढ','ण'],
+    eng:['T','D','N'],
+    meaning:'Gentle, sensitive, graceful. Needs safe loving environment.' },
+  { id:3, name:'मेष',  en:'Mesh (Ram)',        emoji:'🐏',
+    hindi:['त','थ','द','ध','न'],
+    eng:['Th','Dh'],
+    meaning:'Warm, nurturing, grounded. Gives comfort and security.' },
+  { id:4, name:'गरुड़', en:'Garuda (Eagle)',    emoji:'🦅',
+    hindi:['प','फ','ब','भ','म'],
+    eng:['P','F','B','M'],
+    meaning:'Powerful, soaring, protective. Strong values and presence.' },
+  { id:5, name:'विल',  en:'Vil (Cat)',         emoji:'🐱',
+    hindi:['य','र','ल','व'],
+    eng:['Y','R','L','V','W'],
+    meaning:'Independent, clever, selective. Loves on own terms.' },
+  { id:6, name:'सिंह', en:'Simha (Lion)',      emoji:'🦁',
+    hindi:['श','ष','स'],
+    eng:['S','X','Z'],
+    meaning:'Royal, proud, dominant. Loves grandly, wants admiration.' },
+  { id:7, name:'हय',   en:'Hay (Horse/Ha)',    emoji:'🐎',
+    hindi:['ह','क्ष','त्र','ज्ञ'],
+    eng:['H','Q'],
+    meaning:'Free spirit, energetic, adventurous. Needs space and movement.' },
+];
+
+// Enemy = 5th group (circular, 0-indexed → +4 mod 8)
+// Compat scoring: same=4, friendly=3, neutral=2, enemy=0
+function getNaamGroup(letter) {
+  if (!letter) return null;
+  const l = letter.trim().toUpperCase();
+
+  // Try Hindi first (multi-char like क्ष, त्र)
+  for (const g of NAAM_GROUPS) {
+    if (g.hindi.includes(letter.trim())) return g;
+  }
+  // Single English letter
+  const engMap = {
+    A:0,E:0,I:0,O:0,U:0,
+    K:1,G:1,C:1,J:1,
+    T:2,D:2,N:2,
+    P:4,F:4,B:4,M:4,
+    Y:5,R:5,L:5,V:5,W:5,
+    S:6,X:6,Z:6,
+    H:7,Q:7
+  };
+  if (engMap[l] !== undefined) return NAAM_GROUPS[engMap[l]];
+  return null;
+}
+
+function naamCompatScore(g1, g2) {
+  if (!g1 || !g2) return null;
+  if (g1.id === g2.id) return { score:4, cls:'naam-compat-same',    label:'✦ Same Group — Very Auspicious', detail:'Both names belong to the same Varnamala group. Deep resonance — same energy wavelength.' };
+  const enemy1 = (g1.id + 4) % 8;
+  const enemy2 = (g2.id + 4) % 8;
+  if (enemy1 === g2.id || enemy2 === g1.id) return { score:0, cls:'naam-compat-bad', label:'❌ Enemy Group — Inauspicious', detail:'The 5th group from ' + g1.name + ' is ' + NAAM_GROUPS[enemy1].name + ', and from ' + g2.name + ' is ' + NAAM_GROUPS[enemy2].name + '. Clashing name energies — friction in daily communication and temperament.' };
+  // Adjacent (1 apart) = good
+  const diff = Math.min(Math.abs(g1.id - g2.id), 8 - Math.abs(g1.id - g2.id));
+  if (diff === 1) return { score:3, cls:'naam-compat-good',    label:'✅ Friendly Group — Auspicious', detail:'Adjacent Varnamala groups. Complementary name energies — natural understanding and harmony.' };
+  return { score:2, cls:'naam-compat-neutral', label:'🟡 Neutral Group — Acceptable', detail:'Neither friend nor enemy. Average name energy compatibility — workable with mutual effort.' };
+}
+
+function calcNaamMilan() {
+  const bVal = document.getElementById('nm-bride').value.trim();
+  const gVal = document.getElementById('nm-groom').value.trim();
+  const bg = getNaamGroup(bVal);
+  const gg = getNaamGroup(gVal);
+
+  // Update badges
+  function setBadge(el, g, val) {
+    if (!val) { el.innerHTML = '<span style="color:#aaa; font-style:italic; font-size:11px;">Enter a letter above</span>'; return; }
+    if (!g)   { el.innerHTML = '<span style="color:#8b0000; font-size:11px;">⚠ Letter not recognised</span>'; return; }
+    el.innerHTML = '<span class="badge-emoji">' + g.emoji + '</span><div><span class="badge-name">' + g.name + ' — ' + g.en + '</span><span class="badge-sub">' + g.meaning + '</span></div>';
+  }
+  setBadge(document.getElementById('nm-bride-badge'), bg, bVal);
+  setBadge(document.getElementById('nm-groom-badge'), gg, gVal);
+
+  // Compat result
+  const resEl = document.getElementById('nm-result');
+  const compat = naamCompatScore(bg, gg);
+  if (!compat) { resEl.className = 'naam-compat-box'; return; }
+  const enemy1 = NAAM_GROUPS[(bg.id+4)%8];
+  const enemy2 = NAAM_GROUPS[(gg.id+4)%8];
+  resEl.className = 'naam-compat-box show ' + compat.cls;
+  resEl.innerHTML = '<div class="naam-compat-title">' + compat.label + ' (' + compat.score + '/4)</div>'
+    + '<div class="naam-compat-detail">' + compat.detail + '</div>'
+    + '<div style="margin-top:8px; font-size:11px; color:var(--text-light); font-style:italic;">'
+    + '⚔ ' + bg.name + ' enemy → ' + enemy1.name + enemy1.emoji + ' &nbsp;|&nbsp; '
+    + '⚔ ' + gg.name + ' enemy → ' + enemy2.name + enemy2.emoji
+    + '</div>';
+}
+
+function buildNaamGroupRef() {
+  const el = document.getElementById('nm-group-ref');
+  if (!el) return;
+  NAAM_GROUPS.forEach((g, i) => {
+    const enemy = NAAM_GROUPS[(i+4)%8];
+    el.innerHTML += '<div class="naam-group-chip">'
+      + '<div class="naam-group-chip-head">' + g.emoji + ' ' + g.name + ' — ' + g.en + '</div>'
+      + '<div class="naam-group-chip-letters">Hindi: ' + g.hindi.join(' ') + '</div>'
+      + '<div class="naam-group-chip-letters">Eng: ' + g.eng.join(' ') + '</div>'
+      + '<div class="naam-group-chip-letters" style="color:#8b0000;">⚔ Enemy: ' + enemy.name + ' ' + enemy.emoji + '</div>'
+      + '</div>';
+  });
+}
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // RASHI → NAKSHATRA FILTER MAP
 // Each rashi's short name maps to which nakshatras belong to it
@@ -1804,6 +2173,7 @@ function init() {
   // Nakshatra dropdowns start empty (filled on rashi select)
   buildYoniGrid();
   buildNakTable();
+  buildNaamGroupRef();
 }
 
 function filterNakshatras(person) {
@@ -2263,16 +2633,36 @@ window.addEventListener('scroll', () => {
 // PRINT & NEW MATCH
 // ═══════════════════════════════════════════════════════════════════════════════
 function printReport() {
-  // Set couple name in print header
   const bName = document.getElementById('bride-name').value || 'Bride';
   const gName = document.getElementById('groom-name').value || 'Groom';
-  const bRashi = document.getElementById('bride-rashi').value;
-  const gRashi = document.getElementById('groom-rashi').value;
+  const bRashi = document.getElementById('bride-rashi').value || '—';
+  const gRashi = document.getElementById('groom-rashi').value || '—';
+  const bNak  = document.getElementById('bride-nak').value  || '—';
+  const gNak  = document.getElementById('groom-nak').value  || '—';
+  const bChar = document.getElementById('bride-charan').value || '—';
+  const gChar = document.getElementById('groom-charan').value || '—';
+  const printDate = new Date().toLocaleDateString('en-IN', {day:'2-digit',month:'long',year:'numeric'});
+
+  // Populate top header line
   const coupleEl = document.getElementById('print-couple-name');
   if (coupleEl) {
-    coupleEl.textContent = bName + ' (' + bRashi + ')  ✦  ' + gName + ' (' + gRashi + ')  |  Printed: ' + new Date().toLocaleDateString('en-IN', {day:'2-digit',month:'long',year:'numeric'});
+    coupleEl.textContent = bName + '  ✦  ' + gName + '  |  ' + printDate;
   }
-  // Temporarily remove hidden class so results render in print
+
+  // Populate couple details card
+  document.getElementById('pcd-bride-name').textContent = bName;
+  document.getElementById('pcd-bride-info').innerHTML =
+    '<strong>Rashi:</strong> ' + bRashi +
+    ' &nbsp;|&nbsp; <strong>Nakshatra:</strong> ' + bNak +
+    ' &nbsp;|&nbsp; <strong>Charan:</strong> ' + bChar;
+
+  document.getElementById('pcd-groom-name').textContent = gName;
+  document.getElementById('pcd-groom-info').innerHTML =
+    '<strong>Rashi:</strong> ' + gRashi +
+    ' &nbsp;|&nbsp; <strong>Nakshatra:</strong> ' + gNak +
+    ' &nbsp;|&nbsp; <strong>Charan:</strong> ' + gChar;
+
+  // Temporarily show results if hidden
   const resultsEl = document.getElementById('results');
   const wasHidden = resultsEl.classList.contains('hidden');
   if (wasHidden) resultsEl.classList.remove('hidden');
@@ -2297,6 +2687,9 @@ function doNewMatch() {
   document.getElementById('groom-rashi').value = '';
   filterNakshatras('bride');
   filterNakshatras('groom');
+  document.getElementById('nm-bride').value='';
+  document.getElementById('nm-groom').value='';
+  calcNaamMilan();
   document.getElementById('bride-charan').value = '';
   document.getElementById('groom-charan').value = '';
   // Clear derived
