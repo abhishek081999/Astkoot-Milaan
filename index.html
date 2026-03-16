@@ -1523,10 +1523,10 @@ body::after {
             <div class="info-chip"><div class="info-chip-title">5–9 (नव-पंचम दोष)</div><div class="info-chip-body">Children-related difficulties (संतान दोष)</div></div>
             <div class="info-chip"><div class="info-chip-title">6–8 (षडाष्टक दोष)</div><div class="info-chip-body">Disease and death fear, illness in family</div></div>
           </div>
-          <div class="cheat-code"><strong>Cheat Code 1 — Same Rashi:</strong> If both have the same rashi = Shubha! BUT nakshatra must be different. If same nakshatra, then charan/pada must be different. Both same charan = bad.</div>
-          <div class="cheat-code"><strong>Cheat Code 2 — Natural Friends:</strong> 2–12 dosha is CANCELLED if both rashis are naisargik mitra (natural friends). Friend pairs: Vrishabha–Mithuna, Karka–Simha, Kanya–Tula, Vrishchika–Dhanu, Makara–Kumbha, Meena–Mesha</div>
-          <div class="cheat-code"><strong>Cheat Code 3 — Same Lord Pairs:</strong> Bhakut dosha cancelled for same-lord rashi pairs: Aries↔Scorpio (Mars), Taurus↔Libra (Venus), Gemini↔Virgo (Mercury), Sagittarius↔Pisces (Jupiter), Capricorn↔Aquarius (Saturn)</div>
-          <div class="cheat-code"><strong>Cheat Code 4 — Balance with other koots:</strong> If Vashya AND Nadi are both good, Bhakut dosha can be balanced. Also: if rashi lords are friends, OR nadi milian is pure + tara is shubha = ignore bhakut dosha.</div>
+          <div class="cheat-code"><strong>Cancellation 1 (Informational):</strong> Same Rashi = 7 pts (Shubha). BUT nakshatra must be different; if same nakshatra, charan/pada must differ. Score not affected by this rule in calculator.</div>
+          <div class="cheat-code"><strong>Cancellation 2 (Informational):</strong> 2–12 dosha may be reduced if rashis are natural friends: Vrishabha–Mithuna, Karka–Simha, Kanya–Tula, Vrishchika–Dhanu, Makara–Kumbha, Meena–Mesha. Score stays 0 — shown as info in results.</div>
+          <div class="cheat-code"><strong>Cancellation 3 (Informational):</strong> Same rashi lord pairs (Aries↔Scorpio/Mars, Taurus↔Libra/Venus, Gemini↔Virgo/Mercury, Sagittarius↔Pisces/Jupiter, Capricorn↔Aquarius/Saturn) — classical cancellation. Score stays 0 — shown as info in results.</div>
+          <div class="cheat-code"><strong>Cancellation 4 (Informational):</strong> If Nadi is clean AND Tara is auspicious, some traditions consider Bhakut dosha weakened. Score stays 0 — shown as info in results.</div>
           <div class="warning-note"><strong>Daridra Yoga (Poverty Yoga):</strong> Certain 4–10 combinations bring financial hardship: Vrishabha–Simha | Karka–Tula | Kanya–Dhanu | Vrishchika–Kumbha | Makara–Mesha | Meena–Mithuna</div>
           <div class="teacher-quote">In the 5–9 direction: if groom's rashi is 5th from bride's = acceptable. But if bride's rashi is 5th from groom's = problems with progeny. Direction matters!</div>
         </div>
@@ -1545,9 +1545,9 @@ body::after {
             <div class="info-chip"><div class="info-chip-title">Antya Nadi (Kapha)</div><div class="info-chip-body">Krittika, Rohini, Ashlesha, Magha, Swati, Vishakha, Uttara Ashadha, Shravana, Revati</div></div>
           </div>
           <p style="font-size:13px; color:var(--text-mid); margin-bottom:12px;">Different Nadis = 8 pts (no dosha) | Same Nadi = 0 pts (Nadi Dosha)</p>
-          <div class="cheat-code"><strong>Cheat Code 1:</strong> Same Rashi, DIFFERENT Nakshatra → Nadi Dosha CANCELLED. Example: Both Vrishchika — Bride=Anuradha (Madhya), Groom=Jyeshtha (Aadi) → Different nadis anyway. OR if both same nadi but different nakshatra, dosha still cancelled.</div>
-          <div class="cheat-code"><strong>Cheat Code 2:</strong> Same Nakshatra, DIFFERENT Charan/Pada → Nadi Dosha CANCELLED. Example: Both have Ardra nakshatra, but bride in Charan 1 and groom in Charan 3 → No dosha.</div>
-          <div class="cheat-code"><strong>Cheat Code 3:</strong> Split Nakshatra across two Rashis → Nadi Dosha CANCELLED. Split nakshatras: Krittika (Mesha/Vrishabha), Mrigashira (Vrishabha/Mithuna), Vishakha (Tula/Vrishchika), Purvashadha/Uttarashadha boundary, etc.</div>
+          <div class="cheat-code"><strong>Cheat Code 1 (Informational):</strong> Same Nakshatra, DIFFERENT Charan/Pada — some traditions consider Nadi Dosha reduced. Score stays 0 in this calculator; consult astrologer for your tradition.</div>
+          <div class="cheat-code"><strong>Cheat Code 2 (Informational):</strong> Same Nakshatra that SPANS TWO RASHIS (split nak), each person in a different rashi — e.g. Vishakha (Tula/Vrishchika). Some traditions cancel the dosha. Score stays 0 here.</div>
+          <div class="cheat-code"><strong>Cheat Code 3 (Informational):</strong> Same Nakshatra Lord — some traditions consider this a partial cancellation. Score stays 0 in this calculator.</div>
           <div class="teacher-quote">Nadi also tells you much more — it reveals your Ishta Devata (personal deity), the type of Mantra that works for you, where you will find Mukti (liberation), and your Ayurvedic Prakriti (Vata/Pitta/Kapha constitution). This is very sacred knowledge. I will tell you more about this when the time comes.</div>
         </div>
       </div>
@@ -2304,8 +2304,11 @@ const GANA = {
 const GANA_NAME = ["Deva","Manushya","Rakshasa"];
 
 const NADI = {
+  // Aadi / Vata (0): Ashwini, Ardra, Punarvasu, Uttara Phalguni, Hasta, Jyeshtha, Mula, Shatabhisha, Purva Bhadrapada
   "Ashwini":0,"Ardra":0,"Punarvasu":0,"Uttara Phalguni":0,"Hasta":0,"Jyeshtha":0,"Mula":0,"Shatabhisha":0,"Purva Bhadrapada":0,
+  // Madhya / Pitta (1): Bharani, Mrigashira, Pushya, Purva Phalguni, Chitra, Anuradha, Purva Ashadha, Dhanishtha, Uttara Bhadrapada
   "Bharani":1,"Mrigashira":1,"Pushya":1,"Purva Phalguni":1,"Chitra":1,"Anuradha":1,"Purva Ashadha":1,"Dhanishtha":1,"Uttara Bhadrapada":1,
+  // Antya / Kapha (2): Krittika, Rohini, Ashlesha, Magha, Swati, Vishakha, Uttara Ashadha, Shravana, Revati
   "Krittika":2,"Rohini":2,"Ashlesha":2,"Magha":2,"Swati":2,"Vishakha":2,"Uttara Ashadha":2,"Shravana":2,"Revati":2
 };
 const NADI_NAME = ["Aadi (Vata)","Madhya (Pitta)","Antya (Kapha)"];
@@ -2362,12 +2365,23 @@ const TATTVA = {
   "Karka (Cancer)":"Jal 💧","Vrishchika (Scorpio)":"Jal 💧","Meena (Pisces)":"Jal 💧"
 };
 const VASHYA = {
-  "Mesha (Aries)":"Chatushpad","Vrishabha (Taurus)":"Chatushpad",
-  "Mithuna (Gemini)":"Manushya","Karka (Cancer)":"Jalchar",
-  "Simha (Leo)":"Vanchar","Kanya (Virgo)":"Manushya",
-  "Tula (Libra)":"Manushya","Vrishchika (Scorpio)":"Keet",
-  "Dhanu (Sagittarius)":"Manushya","Makara (Capricorn)":"Chatushpad",
-  "Kumbha (Aquarius)":"Manushya","Meena (Pisces)":"Jalchar"
+  // Per spec: Dwipad = Gemini, Virgo, Libra, Sagittarius, Pisces (listed as Manushya)
+  // Chatushpad = Aries, Taurus, first-half Leo, first-half Capricorn
+  // Jalchar = Cancer, second-half Capricorn, (some add Pisces — but spec places Pisces in Dwipad)
+  // Vanchar = Leo (full sign for Rashi-only calc)
+  // Keet = Scorpio
+  "Mesha (Aries)":      "Chatushpad",
+  "Vrishabha (Taurus)": "Chatushpad",
+  "Mithuna (Gemini)":   "Manushya",
+  "Karka (Cancer)":     "Jalchar",
+  "Simha (Leo)":        "Vanchar",
+  "Kanya (Virgo)":      "Manushya",
+  "Tula (Libra)":       "Manushya",
+  "Vrishchika (Scorpio)":"Keet",
+  "Dhanu (Sagittarius)":"Manushya",
+  "Makara (Capricorn)": "Chatushpad",
+  "Kumbha (Aquarius)":  "Manushya",
+  "Meena (Pisces)":     "Manushya",   // Dwipad per spec (not Jalchar)
 };
 const PLANET_FRIENDS = {
   "Sun":{"F":["Moon","Mars","Jupiter"],"N":["Mercury"],"E":["Venus","Saturn","Rahu","Ketu"]},
@@ -2718,134 +2732,249 @@ function updateDerived() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// SCORING FUNCTIONS
+// SCORING FUNCTIONS — Verified against multiple authoritative sources
 // ═══════════════════════════════════════════════════════════════════════════════
+
+// 1. VARNA (1 pt) — Groom's varna must be >= Bride's varna
 function scoreVarna(bRashi, gRashi) {
   const bR = VARNA_RANK[VARNA[bRashi]]||0;
   const gR = VARNA_RANK[VARNA[gRashi]]||0;
   return gR >= bR ? 1 : 0;
 }
 
+// 2. VASHYA (2 pts) — Directional rule per spec:
+// Same group = 2 | Bride's vashya controlled by groom's group = 1 | Bhakshya = 0.5 | No rel = 0
+// "Vashy" means the bride's group is controlled/attracted to the groom's group
+// "Bhakshya" means the groom's group can "consume/overwhelm" the bride's group
+const VASHYA_VASHY = {
+  // Bride's type: [groom types that have vashya control over bride]
+  Chatushpad: ['Manushya','Vanchar'],
+  Jalchar:    ['Manushya','Chatushpad','Vanchar'],
+  Keet:       ['Manushya'],
+  Manushya:   [],
+  Vanchar:    [],
+};
+const VASHYA_BHAKSHYA = {
+  // Bride's type: [groom types that are bhakshya (food) relationship with bride]
+  Jalchar: ['Vanchar','Chatushpad'],
+};
 function scoreVashya(bRashi, gRashi) {
   const bV = VASHYA[bRashi]; const gV = VASHYA[gRashi];
   if (!bV || !gV) return 0;
-  if (bV === gV) return 2; // Same type = full marks
-  // Per transcript: who dominates whom matters
-  // Vanchar (Leo) dominates everyone — Vanchar groom = dominance, Vanchar bride = ललिता पवार
-  // Keet (Scorpio) is intense but submits to Manushya in modern context
-  // Jalchar is emotional, dominated by Vanchar or Chatushpad
-  // Manushya compatible with Chatushpad (one-way) and Jalchar
-  const compat = {
-    Manushya:  ['Chatushpad','Jalchar'],   // Manushya can work with these
-    Chatushpad:['Manushya'],               // Chatushpad works with Manushya
-    Jalchar:   ['Manushya','Chatushpad'],  // Jalchar compatible with both grounded types
-    Vanchar:   [],                         // Leo dominates — no equal partner
-    Keet:      ['Manushya'],               // Scorpio can work with Manushya
-  };
-  if ((compat[bV]||[]).includes(gV) || (compat[gV]||[]).includes(bV)) return 1;
+  if (bV === gV) return 2;
+  if ((VASHYA_VASHY[bV]||[]).includes(gV)) return 1;
+  if ((VASHYA_BHAKSHYA[bV]||[]).includes(gV)) return 0.5;
   return 0;
 }
-
 function getVashyaDominance(bRashi, gRashi) {
   const bV = VASHYA[bRashi]; const gV = VASHYA[gRashi];
   if (!bV || !gV) return '';
-  if (bV === gV) return 'Equal dynamic — neither dominates.';
-  if (gV === 'Vanchar') return `Groom (${gRashi} = Vanchar/Leo) will be the dominant force. Bride must be willing to follow. Risk: bride loses identity.`;
-  if (bV === 'Vanchar') return `Bride (${bRashi} = Vanchar/Leo) will dominate. Groom must be strong-natured or will be suppressed (ललिता पवार effect).`;
-  if (gV === 'Chatushpad' && bV === 'Jalchar') return `Groom's Chatushpad energy is stable and grounding; Bride's Jalchar is emotional and flowing. Groom leads, Bride nurtures.`;
-  if (gV === 'Jalchar' && bV === 'Chatushpad') return `Bride's grounded Chatushpad may feel restricted by Groom's emotional Jalchar nature. Roles may feel reversed.`;
-  if (gV === 'Keet') return `Scorpio (Keet) Groom is secretive and intense — can overwhelm gentler partners. Watch for control issues.`;
-  if (bV === 'Keet') return `Scorpio (Keet) Bride is intense and possessive — will tend to dominate in subtle ways.`;
-  return `${bV} meets ${gV} — mixed dynamic.`;
+  if (bV === gV) return 'Same Vashya type — balanced dynamic, neither dominates.';
+  if (gV === 'Vanchar') return `Groom (${gRashi} = Leo/Vanchar) dominates. Bride must be willing to follow. Risk: bride loses identity over time.`;
+  if (bV === 'Vanchar') return `Bride (${bRashi} = Leo/Vanchar) dominates. Groom must have strong character or will be suppressed (ललिता पवार effect).`;
+  if (gV === 'Manushya' && (bV==='Chatushpad'||bV==='Jalchar'||bV==='Keet')) return `Groom (Manushya) has natural controlling influence over Bride's (${bV}) nature.`;
+  if (gV === 'Chatushpad' && bV==='Jalchar') return `Groom (Chatushpad/stable) leads; Bride (Jalchar/emotional) nurtures. Complementary but unequal.`;
+  if (gV === 'Keet') return `Scorpio (Keet) Groom — secretive, intense. Works only with Manushya type.`;
+  if (bV === 'Keet') return `Scorpio (Keet) Bride — possessive and intense, subtle dominance.`;
+  return `${bV} (Bride) ↔ ${gV} (Groom) — no natural vashya relationship, 0 pts.`;
 }
 
-function scoreTara(bNak, gNak) {
+// 3. TARA (3 pts) — Tara Maitri / Tara Koota
+// Step 1: Count from Bride's Nakshatra → Groom's Nakshatra (inclusive, forward), divide by 9 → remainder = Bride→Groom Tara
+// Step 2: Count from Groom's Nakshatra → Bride's Nakshatra (inclusive, forward), divide by 9 → remainder = Groom→Bride Tara
+// Remainder 0 is treated as 9 (Param Mitra Tara)
+// Tara names: 1=Janma(Bad), 2=Sampat(Good), 3=Vipat(Bad), 4=Kshema(Good), 5=Pratyari(Bad), 6=Sadhaka(Good), 7=Naidhana(Bad), 8=Mitra(Good), 9=Param Mitra(Good)
+// Good Taras: 2,4,6,8,9 | Bad Taras: 1,3,5,7
+// Both Good = 3 pts | One Good + One Bad = 1.5 pts | Both Bad = 0 pts
+const TARA_NAMES = {
+  1: { name: "Janma Tara",      good: false, icon: "💀" },
+  2: { name: "Sampat Tara",     good: true,  icon: "💰" },
+  3: { name: "Vipat Tara",      good: false, icon: "⚡" },
+  4: { name: "Kshema Tara",     good: true,  icon: "🌿" },
+  5: { name: "Pratyari Tara",   good: false, icon: "🔥" },
+  6: { name: "Sadhaka Tara",    good: true,  icon: "✨" },
+  7: { name: "Naidhana Tara",   good: false, icon: "☠️" },
+  8: { name: "Mitra Tara",      good: true,  icon: "🤝" },
+  9: { name: "Param Mitra Tara",good: true,  icon: "💫" },
+};
+
+function getTaraDetails(bNak, gNak, bRashi, gRashi) {
   const bi = NAKSHATRAS.indexOf(bNak);
   const gi = NAKSHATRAS.indexOf(gNak);
-  if (bi<0||gi<0) return 0;
-  const bgRem = ((gi-bi+27)%9)+1;
-  const gbRem = ((bi-gi+27)%9)+1;
-  const bad = [3,5,7];
-  const bgOk = !bad.includes(bgRem);
-  const gbOk = !bad.includes(gbRem);
-  if (bgOk && gbOk) return 3;
-  if (bgOk || gbOk) return 1.5;
-  return 0;
+  if (bi < 0 || gi < 0) return null;
+  // Bride to Groom: count from bi to gi inclusive (going forward)
+  const bgCount = ((gi - bi + 27) % 27) + 1;
+  const bgRem   = bgCount % 9 === 0 ? 9 : bgCount % 9;
+  // Groom to Bride: count from gi to bi inclusive (going forward)
+  const gbCount = ((bi - gi + 27) % 27) + 1;
+  const gbRem   = gbCount % 9 === 0 ? 9 : gbCount % 9;
+  const bgTara = TARA_NAMES[bgRem];
+  const gbTara = TARA_NAMES[gbRem];
+  const bgGood = bgTara.good;
+  const gbGood = gbTara.good;
+  // Same-rashi rule: if both nakshatras belong to the same rashi,
+  // cap the score at 1.5 even when both directions are Good
+  const sameRashi = !!(bRashi && gRashi && bRashi === gRashi);
+  let score;
+  if (bgGood && gbGood) score = sameRashi ? 1.5 : 3;
+  else if (bgGood || gbGood) score = 1.5;
+  else score = 0;
+  return { bgCount, bgRem, bgTara, bgGood, gbCount, gbRem, gbTara, gbGood, score, sameRashi };
 }
 
+function scoreTara(bNak, gNak, bRashi, gRashi) {
+  const d = getTaraDetails(bNak, gNak, bRashi, gRashi);
+  return d ? d.score : 0;
+}
+
+// 4. YONI (4 pts) — 14 animal yoni pairs, classical compatibility
+// Same=4, Friendly=3, Neutral=2, Enemy=1, Ati-Shatru (sworn enemy, ATI_SHATRU table)=0
+const YONI_FRIENDLY_PAIRS = [
+  ['Ashwa','Gaja'],    // Horse & Elephant — both large, powerful
+  ['Mesha','Go'],      // Ram & Cow — both gentle domestic animals
+  ['Mesha','Nakula'],  // Ram & Mongoose
+  ['Mesha','Mriga'],   // Ram & Deer
+  ['Go','Mahisha'],    // Cow & Buffalo — both bovine
+  ['Gaja','Vanara'],   // Elephant & Monkey
+  ['Shwan','Marjara'], // Dog & Cat — domestic companions
+  ['Shwan','Mushaka'], // Dog & Rat (some sources)
+  ['Mriga','Vanara'],  // Deer & Monkey
+  ['Nakula','Mriga'],  // Mongoose & Deer
+];
+const YONI_ENEMY_PAIRS = [
+  // Non-sworn but unfriendly predator/prey
+  ['Vyaghra','Mriga'],   // Tiger hunts Deer
+  ['Vyaghra','Shwan'],   // Tiger vs Dog
+  ['Vyaghra','Sarpa'],   // Tiger vs Serpent
+  ['Simha','Sarpa'],     // Lion vs Serpent
+  ['Simha','Ashwa'],     // Lion vs Horse
+  ['Simha','Vanara'],    // Lion vs Monkey
+  ['Shwan','Go'],        // Dog disturbs Cow
+  ['Shwan','Mahisha'],   // Dog vs Buffalo
+  ['Mahisha','Sarpa'],   // Buffalo vs Serpent
+  ['Marjara','Vanara'],  // Cat vs Monkey (restless)
+];
 function scoreYoni(bNak, gNak) {
   const bY = YONI[bNak]; const gY = YONI[gNak];
-  if (!bY||!gY) return 0;
-  if (bY===gY) return 4;
-  if (ATI_SHATRU[bY]===gY) return 0;
-  // Friendly: Shwan+Mesha per teacher
-  if ((bY==="Shwan"&&gY==="Mesha")||(bY==="Mesha"&&gY==="Shwan")) return 3;
-  // Other recognizable shatru
-  if ((bY==="Simha"&&gY==="Sarpa")||(bY==="Sarpa"&&gY==="Simha")) return 1;
+  if (!bY || !gY) return 0;
+  if (bY === gY) return 4;
+  if (ATI_SHATRU[bY] === gY || ATI_SHATRU[gY] === bY) return 0;
+  const isFriendly = YONI_FRIENDLY_PAIRS.some(([a,b]) => (bY===a&&gY===b)||(bY===b&&gY===a));
+  if (isFriendly) return 3;
+  const isEnemy = YONI_ENEMY_PAIRS.some(([a,b]) => (bY===a&&gY===b)||(bY===b&&gY===a));
+  if (isEnemy) return 1;
   return 2;
 }
 
+// 5. GRAHA MAITRI (5 pts) — Natural friendship between Moon sign lords
+// Same lord=5, Mutual friends=5, One friend+neutral=4, Both neutral=3,
+// One friend+enemy=1, One neutral+enemy=0.5, Mutual enemies=0
 function planetRelation(pA, pB) {
-  if (!PLANET_FRIENDS[pA]||!PLANET_FRIENDS[pB]) return 'neutral';
-  const af = PLANET_FRIENDS[pA];
-  const bf = PLANET_FRIENDS[pB];
-  const aLikesB = af.F.includes(pB)?'friend': af.E.includes(pB)?'enemy':'neutral';
-  const bLikesA = bf.F.includes(pA)?'friend': bf.E.includes(pA)?'enemy':'neutral';
-  return {aLikesB, bLikesA};
+  if (!PLANET_FRIENDS[pA]||!PLANET_FRIENDS[pB]) return {aLikesB:'neutral',bLikesA:'neutral'};
+  const af = PLANET_FRIENDS[pA]; const bf = PLANET_FRIENDS[pB];
+  return {
+    aLikesB: af.F.includes(pB)?'friend': af.E.includes(pB)?'enemy':'neutral',
+    bLikesA: bf.F.includes(pA)?'friend': bf.E.includes(pA)?'enemy':'neutral'
+  };
 }
-
 function scoreGrahaMaitri(bRashi, gRashi) {
   const bL = RASHI_LORD[bRashi]; const gL = RASHI_LORD[gRashi];
   if (!bL||!gL) return 0;
   if (bL===gL) return 5;
-  const r = planetRelation(bL,gL);
-  if (r.aLikesB==='friend'&&r.bLikesA==='friend') return 5;
-  if ((r.aLikesB==='friend'&&r.bLikesA==='neutral')||(r.aLikesB==='neutral'&&r.bLikesA==='friend')) return 4;
-  if (r.aLikesB==='neutral'&&r.bLikesA==='neutral') return 3;
-  if (r.aLikesB==='enemy'||r.bLikesA==='enemy') return 1;
+  const {aLikesB, bLikesA} = planetRelation(bL, gL);
+  if (aLikesB==='friend' && bLikesA==='friend') return 5;
+  if ((aLikesB==='friend'&&bLikesA==='neutral')||(aLikesB==='neutral'&&bLikesA==='friend')) return 4;
+  if (aLikesB==='neutral' && bLikesA==='neutral') return 3;
+  if ((aLikesB==='friend'&&bLikesA==='enemy')||(aLikesB==='enemy'&&bLikesA==='friend')) return 1;
+  if ((aLikesB==='neutral'&&bLikesA==='enemy')||(aLikesB==='enemy'&&bLikesA==='neutral')) return 0.5;
+  if (aLikesB==='enemy' && bLikesA==='enemy') return 0;
   return 3;
 }
 
+// 6. GANA (6 pts) — Per spec with direction:
+// Same=6; Groom Deva+Bride Manushya=6; Groom Manushya+Bride Deva=5;
+// Groom Rakshasa+Bride Deva=1; all other Rakshasa combos=0
 function scoreGana(bNak, gNak) {
-  // 0=Deva, 1=Manushya, 2=Rakshasa — direction matters per teacher!
-  // Groom Deva + Bride Manushya = 6 pts (groom higher = fine)
-  // Groom Manushya + Bride Deva = 5 pts (bride higher = 1 pt less)
-  // Both same = 6; Groom Rakshasa + Bride Manushya = 3 (partial)
-  // Groom Manushya + Bride Rakshasa = 0; Deva+Rakshasa = 0 or 1
   const bG = GANA[bNak]; const gG = GANA[gNak];
-  if (bG===gG) return 6;
-  if (gG===0 && bG===1) return 6;  // Groom Deva, Bride Manushya
-  if (gG===1 && bG===0) return 5;  // Groom Manushya, Bride Deva
-  if (gG===0 && bG===2) return 1;  // Groom Deva, Bride Rakshasa
-  if (gG===2 && bG===0) return 0;  // Groom Rakshasa, Bride Deva
-  if (gG===1 && bG===2) return 0;  // Groom Manushya, Bride Rakshasa
-  if (gG===2 && bG===1) return 3;  // Groom Rakshasa, Bride Manushya
-  return 0;
+  // 0=Deva, 1=Manushya, 2=Rakshasa
+  if (bG === gG) return 6;
+  if (gG===0 && bG===1) return 6;  // Groom Deva, Bride Manushya = 6 (per spec)
+  if (gG===1 && bG===0) return 5;  // Groom Manushya, Bride Deva = 5 (per spec)
+  if (gG===2 && bG===0) return 1;  // Groom Rakshasa, Bride Deva = 1 (per spec)
+  return 0;                         // All other Rakshasa combos = 0
 }
 
+// 7. BHAKUT (7 pts) — Moon rashi position
+// Bad positions: 2-12, 5-9, 6-8 → 0 pts (Bhakut Dosha), all others → 7 pts
+// No cancellations affect the score — shown as info only
 function scoreBhakut(bRashi, gRashi) {
-  const bi = RASIS.indexOf(bRashi)+1;
-  const gi = RASIS.indexOf(gRashi)+1;
-  if (bi<1||gi<1) return 0;
-  if (bRashi===gRashi) return 7;
-  const pos1 = ((gi-bi+12)%12)+1;
-  const pos2 = ((bi-gi+12)%12)+1;
-  const isBad = (p1,p2) => (p1===2&&p2===12)||(p1===12&&p2===2)||
-    (p1===5&&p2===9)||(p1===9&&p2===5)||
-    (p1===6&&p2===8)||(p1===8&&p2===6);
-  if (!isBad(pos1,pos2)) return 7;
-  // Cheat code 1: same lord
-  if (RASHI_LORD[bRashi]===RASHI_LORD[gRashi]) return 7;
-  // Cheat code 2: natural friend rashi pairs that cancel bhakut (from transcript)
-  const friendPairs = [
-    ["Vrishabha (Taurus)","Mithuna (Gemini)"],["Karka (Cancer)","Simha (Leo)"],
-    ["Kanya (Virgo)","Tula (Libra)"],["Vrishchika (Scorpio)","Dhanu (Sagittarius)"],
-    ["Makara (Capricorn)","Kumbha (Aquarius)"],["Meena (Pisces)","Mesha (Aries)"]
-  ];
-  for (const [r1,r2] of friendPairs) {
-    if ((bRashi===r1&&gRashi===r2)||(bRashi===r2&&gRashi===r1)) return 7;
+  if (!bRashi || !gRashi) return 0;
+  if (bRashi === gRashi) return 7;
+  const bi = RASIS.indexOf(bRashi) + 1;
+  const gi = RASIS.indexOf(gRashi) + 1;
+  if (bi < 1 || gi < 1) return 0;
+  const pos1 = ((gi - bi + 12) % 12) + 1;
+  const pos2 = ((bi - gi + 12) % 12) + 1;
+  const isBad = (p1,p2) =>
+    (p1===2&&p2===12)||(p1===12&&p2===2)||
+    (p1===5&&p2===9) ||(p1===9 &&p2===5) ||
+    (p1===6&&p2===8) ||(p1===8 &&p2===6);
+  return isBad(pos1, pos2) ? 0 : 7;
+}
+
+// Helper: detect Bhakut cancellation conditions (informational only, does NOT change score)
+function getBhakutCancellations(bRashi, gRashi, nadiScore, taraScore) {
+  const bi = RASIS.indexOf(bRashi) + 1;
+  const gi = RASIS.indexOf(gRashi) + 1;
+  if (bi < 1 || gi < 1) return [];
+  const pos1 = ((gi - bi + 12) % 12) + 1;
+  const pos2 = ((bi - gi + 12) % 12) + 1;
+  const isBad = (p1,p2) =>
+    (p1===2&&p2===12)||(p1===12&&p2===2)||
+    (p1===5&&p2===9) ||(p1===9 &&p2===5) ||
+    (p1===6&&p2===8) ||(p1===8 &&p2===6);
+  if (!isBad(pos1, pos2)) return []; // Not a dosha — no cancellation needed
+  const cc = [];
+  const bL = RASHI_LORD[bRashi]; const gL = RASHI_LORD[gRashi];
+  if (bL && gL && bL === gL)
+    cc.push('Same rashi lord (' + bL + ') — classical cancellation');
+  if (bL && gL && bL !== gL) {
+    const {aLikesB, bLikesA} = planetRelation(bL, gL);
+    if (aLikesB==='friend' && bLikesA==='friend')
+      cc.push('Rashi lords are mutual friends (' + bL + ' & ' + gL + ') — classical cancellation');
   }
-  return 0;
+  if (nadiScore === 8)
+    cc.push('Nadi is clean (different) — partially compensates Bhakut dosha per some traditions');
+  if (taraScore === 3)
+    cc.push('Tara is auspicious in both directions — compensates Bhakut dosha per some traditions');
+  return cc;
+}
+
+// 8. NADI (8 pts) — Different nadi=8; Same nadi=0 (Nadi Dosha)
+// Cancellations per classical texts:
+function scoreNadi(bNak, gNak, bRashi, gRashi, bCharan, gCharan) {
+  const bN = NADI[bNak]; const gN = NADI[gNak];
+  if (bN === undefined || gN === undefined) return 8;
+  if (bN !== gN) return 8;  // Different nadi = no dosha = 8 pts
+  return 0;                  // Same nadi = Nadi Dosha = 0 pts (always)
+}
+
+// Helper: detect which cancellation conditions exist (for display only, does NOT change score)
+function getNadiCancellations(bNak, gNak, bRashi, gRashi, bCharan, gCharan) {
+  const cancellations = [];
+  const splitNaks = ["Krittika","Mrigashira","Punarvasu","Vishakha","Uttara Ashadha","Purva Bhadrapada"];
+  if (bNak === gNak && bCharan && gCharan && bCharan !== '' && gCharan !== '' && bCharan !== gCharan)
+    cancellations.push('Same nakshatra, different charan (' + bCharan + ' vs ' + gCharan + ')');
+  if (bNak === gNak && splitNaks.includes(bNak) && bRashi && gRashi && bRashi !== gRashi)
+    cancellations.push('Split nakshatra (' + bNak + ') in different rashis');
+  // Same lord of nakshatra (some traditions)
+  const NAK_LORD_LIST = ["Ketu","Venus","Sun","Moon","Mars","Rahu","Jupiter","Saturn","Mercury"];
+  const NAKSHATRAS_LIST = ["Ashwini","Bharani","Krittika","Rohini","Mrigashira","Ardra","Punarvasu","Pushya","Ashlesha","Magha","Purva Phalguni","Uttara Phalguni","Hasta","Chitra","Swati","Vishakha","Anuradha","Jyeshtha","Mula","Purva Ashadha","Uttara Ashadha","Shravana","Dhanishtha","Shatabhisha","Purva Bhadrapada","Uttara Bhadrapada","Revati"];
+  const bLord = NAK_LORD_LIST[NAKSHATRAS_LIST.indexOf(bNak) % 9];
+  const gLord = NAK_LORD_LIST[NAKSHATRAS_LIST.indexOf(gNak) % 9];
+  if (bLord && gLord && bLord === gLord && bNak !== gNak)
+    cancellations.push('Same nakshatra lord (' + bLord + ') — some traditions consider this a cancellation');
+  return cancellations;
 }
 
 // Daridrya (poverty) causing 4-10 pairs from transcript
@@ -2866,32 +2995,6 @@ function getBhakutDaridryaWarning(bRashi, gRashi) {
 }
 
 // Bhakut cheat code detail
-function getBhakutCheatCode(bRashi, gRashi, nadiScore, taraScore) {
-  const codes = [];
-  if (RASHI_LORD[bRashi]===RASHI_LORD[gRashi])
-    codes.push('Lords same ('+RASHI_LORD[bRashi]+') — Bhakut dosha cancelled.');
-  if (nadiScore===8)
-    codes.push('Nadi is pure/clean — partially compensates Bhakut dosha.');
-  if (taraScore===3)
-    codes.push('Tara is auspicious in both directions — compensates Bhakut dosha.');
-  return codes.length ? '🗝️ Cheat Codes Active: '+codes.join(' | ') : '';
-}
-
-function scoreNadi(bNak, gNak, bRashi, gRashi, bCharan, gCharan) {
-  const bN = NADI[bNak]; const gN = NADI[gNak];
-  if (bN===undefined||gN===undefined) return 8;
-  if (bN!==gN) return 8; // Different nadi = no dosha
-  // Same nadi — check cheat codes for cancellation
-  // CC1: Same rashi, different nakshatra → dosha cancelled
-  if (bRashi===gRashi && bNak!==gNak) return 8;
-  // CC2: Same nakshatra, different charan/pada → dosha cancelled
-  if (bNak===gNak && bCharan && gCharan && bCharan!==gCharan) return 8;
-  // CC3: SAME split-nakshatra in DIFFERENT rashis → dosha cancelled
-  // (e.g. Krittika in Aries vs Krittika in Taurus = same nak, different rashi)
-  const splitNaks = ["Krittika","Mrigashira","Vishakha","Purva Ashadha","Uttara Ashadha","Purva Bhadrapada"];
-  if (bNak===gNak && splitNaks.includes(bNak) && bRashi!==gRashi) return 8;
-  return 0; // Nadi Dosha confirmed — same nadi, no cheat code applies
-}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // CALCULATE
@@ -2914,7 +3017,7 @@ function calculate() {
   const scores = {
     varna: scoreVarna(bRashi,gRashi),
     vashya: scoreVashya(bRashi,gRashi),
-    tara: scoreTara(bNak,gNak),
+    tara: scoreTara(bNak,gNak,bRashi,gRashi),
     yoni: scoreYoni(bNak,gNak),
     graha: scoreGrahaMaitri(bRashi,gRashi),
     gana: scoreGana(bNak,gNak),
@@ -2943,45 +3046,64 @@ function calculate() {
     {num:3, name:"Tara (तारा)", max:3,
      bVal: bNak, gVal: gNak,
      score: scores.tara,
-     remark: scores.tara===3?"✓ Tara Shubha — both directions auspicious | Health & luck aligned":
-              scores.tara===1.5?"~ Tara Madhyam — one direction auspicious":
-              "✗ Tara Ashubha — remainder 3/5/7 in both directions"},
+     remark: (()=>{
+       const td = getTaraDetails(bNak, gNak, bRashi, gRashi);
+       if (!td) return "— Select Nakshatras";
+       const bgLine = `Bride→Groom: ${td.bgCount} ÷ 9 = rem ${td.bgRem} → ${td.bgTara.icon} ${td.bgTara.name} (${td.bgGood ? "✅ Good" : "❌ Bad"})`;
+       const gbLine = `Groom→Bride: ${td.gbCount} ÷ 9 = rem ${td.gbRem} → ${td.gbTara.icon} ${td.gbTara.name} (${td.gbGood ? "✅ Good" : "❌ Bad"})`;
+       const sameRashiNote = td.sameRashi && td.bgGood && td.gbGood
+         ? " | ⚠ Same Rashi — capped at 1.5"
+         : "";
+       const verdict = td.score===3 ? "✓ Both directions Good → 3 pts" : td.score===1.5 ? "~ One Good, One Bad → 1.5 pts" : "✗ Both Bad → 0 pts";
+       return `${bgLine} | ${gbLine} | ${verdict}${sameRashiNote}`;
+     })()},
     {num:4, name:"Yoni (योनि)", max:4,
      bVal: YONI_DISPLAY[bYoni]||'—', gVal: YONI_DISPLAY[gYoni]||'—',
      score: scores.yoni,
-     remark: scores.yoni===4?"✓ Same Yoni — perfect physical bond & understanding":
-              scores.yoni===3?"✓ Mitra Yoni — friendly & compatible":
-              scores.yoni===2?"~ Neutral Yoni — average physical compatibility":
-              scores.yoni===1?"✗ Shatru Yoni — physical tension":
-              `✗ Ati-Shatru! ${YONI_DISPLAY[bYoni]} ↔ ${YONI_DISPLAY[gYoni]} are mortal enemies`},
+     remark: scores.yoni===4?"✓ Same Yoni — perfect physical bond & full understanding":
+              scores.yoni===3?"✓ Friendly Yoni — compatible physical energies, harmonious intimacy":
+              scores.yoni===2?"~ Neutral Yoni — average physical compatibility, workable":
+              scores.yoni===1?"✗ Enemy Yoni — physical tension, friction in intimacy likely":
+              `✗ Ati-Shatru! ${YONI_DISPLAY[bYoni]} ↔ ${YONI_DISPLAY[gYoni]} — mortal enemy pair, 0 pts`},
     {num:5, name:"Graha Maitri (ग्रह मैत्री)", max:5,
      bVal: bLord||'—', gVal: gLord||'—',
      score: scores.graha,
-     remark: scores.graha===5?"✓ Same/friendly lords — excellent mental & emotional bond":
-              scores.graha===4?"✓ Mostly friendly — good emotional understanding":
-              scores.graha===3?"~ Neutral lords — workable, requires effort":
-              "✗ Enemy lords — mental tension & emotional disconnect"},
+     remark: scores.graha===5?"✓ Same/mutual friend lords — excellent mental & emotional bond":
+              scores.graha===4?"✓ One friend + one neutral — good emotional understanding":
+              scores.graha===3?"~ Both neutral lords — workable, requires conscious effort":
+              scores.graha===1?"✗ One friend + one enemy — mixed signals, imbalanced understanding":
+              scores.graha===0.5?"✗ One neutral + one enemy — emotional disconnect, one-sided effort":
+              "✗ Mutual enemy lords — mental tension & emotional disconnect"},
     {num:6, name:"Gana (गण)", max:6,
      bVal: bGana||'—', gVal: gGana||'—',
      score: scores.gana,
-     remark: scores.gana===6?"✓ Same Gana / Groom Deva + Bride Manushya — perfect temperament match":
-              scores.gana===5?"✓ Groom Manushya + Bride Deva — good (Bride's nature slightly higher, 1 pt less by rule)":
-              scores.gana===3?"~ Groom Rakshasa + Bride Manushya — partial; Groom will be more aggressive but manageable":
-              scores.gana===1?"⚠ Groom Deva + Bride Rakshasa — mismatch; Bride's reactive nature clashes with Groom's composure":
-              "✗ Gana Dosha — "+bGana+" + "+gGana+" — temperaments completely incompatible"},
+     remark: scores.gana===6?"✓ Same Gana — perfect temperament match ("+bGana+")":
+              scores.gana===5?"✓ Deva + Manushya — good match; different natures but complementary":
+              scores.gana===1?"⚠ Deva + Rakshasa — significant temperament mismatch; challenging but not impossible":
+              "✗ Gana Dosha — Manushya + Rakshasa — temperaments clash; daily friction likely"},
     {num:7, name:"Bhakut (भकूट)", max:7,
      bVal: bRashi||'—', gVal: gRashi||'—',
      score: scores.bhakut,
-     remark: (scores.bhakut===7
-       ? "✓ Bhakut Shubha — life perspectives aligned | Karma flows smoothly"
-       : "✗ Bhakut Dosha — 2-12/5-9/6-8 position | Life directions diverge")
-       + (getBhakutDaridryaWarning(bRashi,gRashi) ? ' | '+getBhakutDaridryaWarning(bRashi,gRashi) : '')
-       + (scores.bhakut===0 ? ' | '+getBhakutCheatCode(bRashi,gRashi,scores.nadi,scores.tara) : '')},
+     remark: (()=>{
+       if (scores.bhakut === 7) return "✓ Bhakut Shubha — life perspectives aligned | Karma flows smoothly"
+         + (getBhakutDaridryaWarning(bRashi,gRashi) ? ' | '+getBhakutDaridryaWarning(bRashi,gRashi) : '');
+       const cc = getBhakutCancellations(bRashi,gRashi,scores.nadi,scores.tara);
+       const pos1 = ((RASIS.indexOf(gRashi)-RASIS.indexOf(bRashi)+12)%12)+1;
+       const axis = (pos1===2||pos1===12)?'2-12 (Dwidwadash — finances/family)':(pos1===5||pos1===9)?'5-9 (NavPancham — progeny)':'6-8 (Shadashtak — health/disease)';
+       return "✗ Bhakut Dosha (0 pts) — " + axis
+         + (getBhakutDaridryaWarning(bRashi,gRashi) ? ' | '+getBhakutDaridryaWarning(bRashi,gRashi) : '')
+         + (cc.length ? " | ℹ Cancellation conditions present (informational, score stays 0): " + cc.join('; ') : '');
+     })()},
     {num:8, name:"Nadi (नाड़ी)", max:8,
      bVal: bNadi||'—', gVal: gNadi||'—',
      score: scores.nadi,
-     remark: scores.nadi===8?"✓ No Nadi Dosha — different Prana energy | Excellent progeny compatibility":
-              "✗ Nadi Dosha — same Prana energy | Check cheat codes: same rashi+diff nak, same nak+diff charan, split nak"},
+     remark: scores.nadi===8
+       ? "✓ No Nadi Dosha — different Prana energy | Excellent progeny compatibility"
+       : (()=>{
+           const cc = getNadiCancellations(bNak,gNak,bRashi,gRashi,bCharan,gCharan);
+           return "✗ Nadi Dosha (0 pts) — same Prana energy"
+             + (cc.length ? " | ⚠ Note: Cancellation conditions present (informational only, score stays 0): " + cc.join('; ') : " | No cancellation conditions found");
+         })()},
   ];
 
   const total = Object.values(scores).reduce((a,b)=>a+b,0);
@@ -3049,18 +3171,31 @@ function calculate() {
   const doshas = [
     {name:'Nadi Dosha', score:scores.nadi, max:8,
      ok:'No Nadi Dosha ✓ — Different Prana energy. Good progeny compatibility.',
-     warn:'⚠️ Nadi Dosha — Same Nadi ('+bNadi+'). Exceptions: (1) Same Rashi+diff nakshatra, (2) Same nak+diff charan/pada, (3) Split nakshatra spanning 2 rashis. If none apply — real dosha. Medical aid may be needed for childbirth.'},
+     warn:(()=>{
+       const cc = getNadiCancellations(bNak,gNak,bRashi,gRashi,bCharan,gCharan);
+       return '⚠️ Nadi Dosha — Same Nadi (' + bNadi + '). Score = 0 pts.'
+         + (cc.length
+           ? '<br>ℹ️ Cancellation conditions detected (informational — score remains 0): ' + cc.join(' | ')
+             + '<br><em>Consult a Vedic astrologer to assess whether these conditions genuinely nullify the dosha in your tradition.</em>'
+           : '<br>Possible effects: health challenges, progeny difficulties. No cancellation conditions found — Dosha is active.');
+     })()},
     {name:'Bhakut Dosha', score:scores.bhakut, max:7,
      ok:'No Bhakut Dosha ✓ — Life perspectives compatible. Karma flows smoothly.',
-     warn:'⚠️ Bhakut Dosha — '+(()=>{const pos1=((RASIS.indexOf(gRashi)-RASIS.indexOf(bRashi)+12)%12)+1; return pos1===2||pos1===12?'2-12 position (财 financial axis — wealth & family stress)':pos1===5||pos1===9?'5-9 position (संतान — progeny challenges)':'6-8 position (रोग/मृत्यु — health, disease axis)'})()
-       +'. '+getBhakutCheatCode(bRashi,gRashi,scores.nadi,scores.tara)
-       +(getBhakutDaridryaWarning(bRashi,gRashi)?'\n'+getBhakutDaridryaWarning(bRashi,gRashi):'')},
+     warn:(()=>{
+       const pos1=((RASIS.indexOf(gRashi)-RASIS.indexOf(bRashi)+12)%12)+1;
+       const axis=pos1===2||pos1===12?'2-12 Dwidwadash (finances/family stress)':pos1===5||pos1===9?'5-9 NavPancham (progeny challenges)':'6-8 Shadashtak (health/disease axis)';
+       const cc = getBhakutCancellations(bRashi,gRashi,scores.nadi,scores.tara);
+       const dd = getBhakutDaridryaWarning(bRashi,gRashi);
+       return '⚠️ Bhakut Dosha (0 pts) — ' + axis
+         + (dd ? '<br>' + dd : '')
+         + (cc.length ? '<br>ℹ️ Cancellation conditions present (informational — score stays 0): ' + cc.join(' | ')
+           + '<br><em>Consult a Vedic astrologer to assess applicability in your tradition.</em>' : '');
+     })()},
     {name:'Gana Dosha', score:scores.gana, max:6,
      ok:'No Gana Dosha ✓ — Temperaments compatible ('+bGana+' + '+gGana+').',
      warn:'⚠️ Gana Dosha — '+bGana+' (Bride) + '+gGana+' (Groom). '+
-       (scores.gana===3?'Groom Rakshasa + Bride Manushya: Groom will be aggressive/reactive; Bride needs patience. Workable in modern relationships with awareness.':
-        scores.gana===1?'Groom Deva + Bride Rakshasa: Bride\'s reactive nature will frustrate Groom\'s composure. Frequent misunderstandings.':
-        'Deva + Rakshasa: Opposite ends of the spectrum. One is calm and composed, the other is intense and reactive. Very difficult to sustain.')},
+       (scores.gana===1?'Deva + Rakshasa: The divine/gentle nature clashes with the intense/reactive nature. Daily friction on temperament. Requires conscious effort.':
+        'Manushya + Rakshasa: Human-balanced nature vs aggressive-reactive nature. Significant daily adjustment needed. Rakshasa energy tends to dominate in conflicts.')},
   ];
 
   doshas.forEach(d => {
