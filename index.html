@@ -1117,6 +1117,270 @@ body::after {
   .naam-milan-section { break-inside: avoid; }
 }
 
+/* ── NAAM MILAN BEAUTIFUL RESULT ── */
+@keyframes nm-reveal {
+  from { opacity:0; transform:translateY(16px) scale(0.97); }
+  to   { opacity:1; transform:translateY(0) scale(1); }
+}
+@keyframes nm-spin-in {
+  from { opacity:0; transform:rotate(-15deg) scale(0.7); }
+  to   { opacity:1; transform:rotate(0deg) scale(1); }
+}
+@keyframes nm-bar-fill {
+  from { width: 0%; }
+}
+@keyframes nm-glow-pulse {
+  0%,100% { box-shadow: 0 0 18px #c8960c30; }
+  50%      { box-shadow: 0 0 38px #c8960c60; }
+}
+
+.nm-result-card {
+  animation: nm-reveal 0.5s cubic-bezier(.22,.68,0,1.3) both;
+  background: linear-gradient(160deg, #fffcf0 0%, #fdf4e0 60%, #fef9ee 100%);
+  border: 1px solid #c8960c30;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0 8px 40px #4a050518, 0 2px 8px #c8960c18;
+}
+
+.nm-result-header {
+  background: linear-gradient(135deg, var(--maroon) 0%, #6b1010 50%, #4a0505 100%);
+  padding: 20px 24px 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.nm-result-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(45deg,#c8960c08 0,#c8960c08 1px,transparent 1px,transparent 18px);
+  pointer-events: none;
+}
+.nm-result-verdict-badge {
+  display: inline-block;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(11px, 2vw, 14px);
+  letter-spacing: 3px;
+  padding: 5px 18px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index:1;
+}
+.nm-vb-same    { background: #1a4a1a; color: #a8e8a8; border: 1px solid #2d7a2d60; }
+.nm-vb-good    { background: #2a4a00; color: #c8e860; border: 1px solid #5a7a0060; }
+.nm-vb-neutral { background: #4a3a00; color: #f0c060; border: 1px solid #c8960c60; }
+.nm-vb-bad     { background: #4a0000; color: #f08080; border: 1px solid #8b000060; }
+
+.nm-result-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(15px, 3vw, 20px);
+  font-weight: 700;
+  color: var(--light-gold);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  position: relative; z-index:1;
+}
+.nm-result-subtitle {
+  font-family: 'Crimson Pro', serif;
+  font-size: 13px;
+  color: #c8960c80;
+  font-style: italic;
+  position: relative; z-index:1;
+}
+
+/* Couple animal display */
+.nm-couple-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 20px 24px 16px;
+  background: rgba(255,255,255,0.6);
+  border-bottom: 1px solid #c8960c18;
+}
+.nm-animal-block {
+  flex: 1;
+  text-align: center;
+  padding: 12px 8px;
+}
+.nm-animal-emoji {
+  font-size: clamp(40px, 8vw, 64px);
+  line-height: 1;
+  display: block;
+  animation: nm-spin-in 0.6s cubic-bezier(.22,.68,0,1.3) both;
+  filter: drop-shadow(0 4px 12px #c8960c30);
+}
+.nm-animal-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(11px,2.2vw,15px);
+  font-weight: 700;
+  color: var(--maroon);
+  margin: 8px 0 2px;
+}
+.nm-animal-en {
+  font-size: 11px;
+  color: var(--text-light);
+  font-style: italic;
+}
+.nm-animal-letter-badge {
+  display: inline-block;
+  margin-top: 6px;
+  background: var(--maroon);
+  color: var(--light-gold);
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
+  width: 36px; height: 36px;
+  line-height: 36px;
+  border-radius: 50%;
+  letter-spacing: 0;
+}
+.nm-bridge {
+  text-align: center;
+  padding: 0 12px;
+  flex-shrink: 0;
+}
+.nm-bridge-icon {
+  font-size: 28px;
+  display: block;
+  line-height: 1;
+}
+.nm-bridge-score {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(20px, 4vw, 30px);
+  font-weight: 900;
+  line-height: 1;
+  margin-top: 6px;
+}
+.nm-bridge-score-same    { color: #2d7a2d; text-shadow: 0 0 20px #2d7a2d60; }
+.nm-bridge-score-good    { color: #5a7a00; text-shadow: 0 0 20px #5a7a0060; }
+.nm-bridge-score-neutral { color: #c8960c; text-shadow: 0 0 20px #c8960c60; }
+.nm-bridge-score-bad     { color: #8b0000; text-shadow: 0 0 20px #8b000060; }
+.nm-bridge-max {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  color: var(--text-light);
+  letter-spacing: 1px;
+}
+
+/* Score bar */
+.nm-score-bar-section {
+  padding: 14px 24px 8px;
+  background: rgba(255,252,240,0.8);
+}
+.nm-score-bar-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+.nm-score-bar-bg {
+  height: 10px;
+  background: #e8dcc0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.nm-score-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  animation: nm-bar-fill 1s cubic-bezier(.4,0,.2,1) both;
+  animation-delay: 0.3s;
+}
+.nm-fill-same    { background: linear-gradient(90deg, #2d7a2d, #5ab85a); }
+.nm-fill-good    { background: linear-gradient(90deg, #5a7a00, #9ab800); }
+.nm-fill-neutral { background: linear-gradient(90deg, #c8960c, #f0c030); }
+.nm-fill-bad     { background: linear-gradient(90deg, #8b0000, #c83030); }
+
+/* Detail section */
+.nm-detail-section {
+  padding: 16px 24px 20px;
+}
+.nm-detail-text {
+  font-family: 'Crimson Pro', serif;
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.nm-enemy-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.nm-enemy-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fde8e8;
+  border: 1px solid #8b000020;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  color: #8b0000;
+  letter-spacing: 0.5px;
+}
+
+/* Meaning strips */
+.nm-meaning-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #c8960c18;
+}
+@media (max-width: 560px) { .nm-meaning-row { grid-template-columns: 1fr; } }
+.nm-meaning-chip {
+  background: white;
+  border: 1px solid #c8960c20;
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+.nm-meaning-chip-head {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--maroon);
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.nm-meaning-chip-body {
+  font-family: 'Crimson Pro', serif;
+  font-size: 13px;
+  color: var(--text-mid);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+
+/* ── REFERENCE SUB-TABS ── */
+.ref-tab {
+  background: transparent;
+  border: 1px solid #c8960c30;
+  color: var(--text-light);
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ref-tab:hover, .ref-tab.active {
+  background: var(--maroon);
+  color: var(--light-gold);
+  border-color: var(--maroon);
+}
 </style>
 </head>
 <body>
@@ -1137,14 +1401,12 @@ body::after {
 
 <!-- NAVIGATION -->
 <nav class="main-nav">
-  <button class="nav-btn active" onclick="showPanel('calculator')">⚖️ Calculator</button>
-  <button class="nav-btn" onclick="showPanel('knowledge')">📚 Cheat Codes</button>
-  <button class="nav-btn" onclick="showPanel('yoni')">🐾 Yoni Guide</button>
-  <button class="nav-btn" onclick="showPanel('nakshatra')">🌟 Nakshatra Ref</button>
-  <button class="nav-btn" onclick="showPanel('verdict')">📊 Verdict Scale</button>
-  <button class="nav-btn" onclick="showPanel('naam')">🔤 Naam Milan</button>
-  <button class="nav-btn" onclick="showPanel('nakadvanced')" style="background: linear-gradient(135deg,#4a0505,#7a1010); color: var(--light-gold); border-color: #c8960c60;">🔮 Nak Advanced</button>
-  <button class="nav-btn" onclick="showPanel('checklist')">✅ Checklist</button>
+  <button class="nav-btn active" onclick="showPanel('calculator', this)">⚖️ Calculator</button>
+  <button class="nav-btn" onclick="showPanel('reference', this)">📖 Reference</button>
+  <button class="nav-btn" onclick="showPanel('nakshatra', this)">🌟 Nakshatra Ref</button>
+  <button class="nav-btn" onclick="showPanel('naam', this)">🔤 Naam Milan</button>
+  <button class="nav-btn" onclick="showPanel('nakadvanced', this)" style="background: linear-gradient(135deg,#4a0505,#7a1010); color: var(--light-gold); border-color: #c8960c60;">🔮 Nak Advanced</button>
+  <button class="nav-btn" onclick="showPanel('checklist', this)">✅ Checklist</button>
 </nav>
 
 <div class="main">
@@ -1178,7 +1440,7 @@ body::after {
         </div>
         <div class="form-row">
           <label class="form-label">Nakshatra (जन्म नक्षत्र) ★</label>
-          <select class="form-select" id="bride-nak" onchange="updateDerived()">
+          <select class="form-select" id="bride-nak" onchange="updateDerived(); filterCharan('bride')">
             <option value="">— Select Nakshatra —</option>
           </select>
         </div>
@@ -1207,7 +1469,7 @@ body::after {
         </div>
         <div class="form-row">
           <label class="form-label">Nakshatra (जन्म नक्षत्र) ★</label>
-          <select class="form-select" id="groom-nak" onchange="updateDerived()">
+          <select class="form-select" id="groom-nak" onchange="updateDerived(); filterCharan('groom')">
             <option value="">— Select Nakshatra —</option>
           </select>
         </div>
@@ -1317,17 +1579,27 @@ body::after {
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
-     PANEL 2: KNOWLEDGE / CHEAT CODES
+     PANEL: REFERENCE (Cheat Codes + Yoni Guide + Verdict Scale)
 ═══════════════════════════════════════════════════════════ -->
-<div class="panel" id="panel-knowledge">
+<div class="panel" id="panel-reference">
   <div class="panel-header">
-    <span class="panel-header-icon">📚</span>
+    <span class="panel-header-icon">📖</span>
     <div>
-      <div class="panel-header-title">CHEAT CODES & DEEP KNOWLEDGE</div>
+      <div class="panel-header-title">REFERENCE — CHEAT CODES · YONI GUIDE · VERDICT SCALE</div>
     </div>
     <span class="panel-header-sub">गुरु-उपदेश आधारित</span>
   </div>
   <div class="panel-body">
+    <!-- REFERENCE SUB-TABS -->
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;border-bottom:1px solid #c8960c20;padding-bottom:12px;">
+      <button class="ref-tab active" id="ref-tab-btn-cheat" onclick="showRefTab('cheat')">📚 Cheat Codes</button>
+      <button class="ref-tab" id="ref-tab-btn-yoni" onclick="showRefTab('yoni')">🐾 Yoni Guide</button>
+      <button class="ref-tab" id="ref-tab-btn-verdict" onclick="showRefTab('verdict')">📊 Verdict Scale</button>
+    </div>
+
+    <!-- SUB-PANEL: CHEAT CODES -->
+    <div id="ref-cheat" style="display:block;">
+
 
     <div class="knowledge-tabs">
       <button class="k-tab active" onclick="showKTab('overview','this')">Overview</button>
@@ -1751,21 +2023,12 @@ body::after {
       </div>
     </div>
 
-  </div>
-</div>
+  
+    </div><!-- end ref-cheat -->
 
-<!-- ═══════════════════════════════════════════════════════════
-     PANEL 3: YONI GUIDE
-═══════════════════════════════════════════════════════════ -->
-<div class="panel" id="panel-yoni">
-  <div class="panel-header">
-    <span class="panel-header-icon">🐾</span>
-    <div>
-      <div class="panel-header-title">YONI MILAN GUIDE — 14 Animal Yonis</div>
-    </div>
-    <span class="panel-header-sub">Biological behavior &amp; love expression</span>
-  </div>
-  <div class="panel-body">
+    <!-- SUB-PANEL: YONI GUIDE -->
+    <div id="ref-yoni" style="display:none;">
+
     <div class="teacher-quote" style="margin-bottom:20px;">Yoni is not just about sexual compatibility. It is your biological behavior — your organic reaction to love. How do you express physical affection? What is your love language in the physical sense?</div>
     <div class="yoni-grid" id="yoni-grid"></div>
 
@@ -1778,52 +2041,12 @@ body::after {
 
     <div style="font-family:'Cinzel',serif; font-size:13px; color:var(--maroon); letter-spacing:2px; margin-bottom:12px;">🔢 YONI COMPATIBILITY MATRIX</div>
     <div class="matrix-scroll" id="yoni-matrix"></div>
-  </div>
-</div>
+  
+    </div><!-- end ref-yoni -->
 
-<!-- ═══════════════════════════════════════════════════════════
-     PANEL 4: NAKSHATRA REFERENCE
-═══════════════════════════════════════════════════════════ -->
-<div class="panel" id="panel-nakshatra">
-  <div class="panel-header">
-    <span class="panel-header-icon">🌟</span>
-    <div>
-      <div class="panel-header-title">27 NAKSHATRAS — COMPLETE REFERENCE</div>
-    </div>
-    <span class="panel-header-sub">नक्षत्र सन्दर्भ तालिका</span>
-  </div>
-  <div class="panel-body">
-    <div style="overflow-x:auto;">
-      <table class="nak-table" id="nak-table">
-        <thead>
-          <tr>
-            <th>#</th><th>Nakshatra</th><th>Lord</th><th>Gana</th><th>Nadi</th><th>Yoni</th><th>Rashi</th><th>Deep Meaning</th>
-          </tr>
-        </thead>
-        <tbody id="nak-tbody"></tbody>
-      </table>
-    </div>
-    <div style="margin-top:16px; display:flex; gap:16px; flex-wrap:wrap; font-size:12px; color:var(--text-mid);">
-      <span style="padding:4px 10px; background:#e8f4ff; border-radius:2px;">🔵 Deva Gana</span>
-      <span style="padding:4px 10px; background:#fffde8; border-radius:2px;">🟡 Manushya Gana</span>
-      <span style="padding:4px 10px; background:#ffeaea; border-radius:2px;">🔴 Rakshasa Gana</span>
-      <span style="padding:4px 10px; background:white; border:1px solid #c8960c20; border-radius:2px;"><span class="nadi-aadi">Aadi</span> / <span class="nadi-madhya">Madhya</span> / <span class="nadi-antya">Antya</span> Nadi</span>
-    </div>
-  </div>
-</div>
+    <!-- SUB-PANEL: VERDICT SCALE -->
+    <div id="ref-verdict" style="display:none;">
 
-<!-- ═══════════════════════════════════════════════════════════
-     PANEL 5: VERDICT SCALE
-═══════════════════════════════════════════════════════════ -->
-<div class="panel" id="panel-verdict">
-  <div class="panel-header">
-    <span class="panel-header-icon">📊</span>
-    <div>
-      <div class="panel-header-title">COMPATIBILITY VERDICT SCALE</div>
-    </div>
-    <span class="panel-header-sub">36 Guna Interpretation</span>
-  </div>
-  <div class="panel-body">
     <div class="verdict-scale">
       <div class="vs-card vs-32"><div class="vs-range">32–36</div><div class="vs-label">💑 Uttar Uttam</div><div class="vs-desc">Exceptional match. Blessed union — strong love, health &amp; prosperity. Note: Some traditions caution even 32+ as "too much alignment can create monotony."</div></div>
       <div class="vs-card vs-24"><div class="vs-range">24–31</div><div class="vs-label">✅ Uttam</div><div class="vs-desc">Good match. Well-suited couple. Minor differences but overall harmonious married life. Most recommended range.</div></div>
@@ -1864,6 +2087,40 @@ body::after {
         <div class="info-chip-title">Stage 3 — Planetary Chemistry</div>
         <div class="info-chip-body">Venus–Mars chemistry between charts. Girl's Mars nakshatra vs Boy's Venus. Karmic depth. Dasha compatibility. THIS IS THE MOST IMPORTANT.</div>
       </div>
+    </div>
+  
+    </div><!-- end ref-verdict -->
+
+  </div><!-- end panel-body -->
+</div><!-- end panel-reference -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     PANEL 4: NAKSHATRA REFERENCE
+═══════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-nakshatra">
+  <div class="panel-header">
+    <span class="panel-header-icon">🌟</span>
+    <div>
+      <div class="panel-header-title">27 NAKSHATRAS — COMPLETE REFERENCE</div>
+    </div>
+    <span class="panel-header-sub">नक्षत्र सन्दर्भ तालिका</span>
+  </div>
+  <div class="panel-body">
+    <div style="overflow-x:auto;">
+      <table class="nak-table" id="nak-table">
+        <thead>
+          <tr>
+            <th>#</th><th>Nakshatra</th><th>Lord</th><th>Gana</th><th>Nadi</th><th>Yoni</th><th>Rashi</th><th>Deep Meaning</th>
+          </tr>
+        </thead>
+        <tbody id="nak-tbody"></tbody>
+      </table>
+    </div>
+    <div style="margin-top:16px; display:flex; gap:16px; flex-wrap:wrap; font-size:12px; color:var(--text-mid);">
+      <span style="padding:4px 10px; background:#e8f4ff; border-radius:2px;">🔵 Deva Gana</span>
+      <span style="padding:4px 10px; background:#fffde8; border-radius:2px;">🟡 Manushya Gana</span>
+      <span style="padding:4px 10px; background:#ffeaea; border-radius:2px;">🔴 Rakshasa Gana</span>
+      <span style="padding:4px 10px; background:white; border:1px solid #c8960c20; border-radius:2px;"><span class="nadi-aadi">Aadi</span> / <span class="nadi-madhya">Madhya</span> / <span class="nadi-antya">Antya</span> Nadi</span>
     </div>
   </div>
 </div>
@@ -1912,7 +2169,7 @@ body::after {
       </div>
     </div>
 
-    <div class="naam-compat-box k-card" id="nm-result" style="display: none; padding: 20px;"></div>
+    <div id="nm-result" style="display:none;"></div>
 
     <!-- All 8 groups reference -->
     <div style="margin-top:30px;">
@@ -2611,19 +2868,96 @@ function calcNaamMilan() {
   setBadge(document.getElementById('nm-bride-badge'), bg, bVal);
   setBadge(document.getElementById('nm-groom-badge'), gg, gVal);
 
-  // Compat result
+  // Compat result — beautiful card
   const resEl = document.getElementById('nm-result');
   const compat = naamCompatScore(bg, gg);
-  if (!compat) { resEl.className = 'naam-compat-box'; return; }
+  if (!compat) { resEl.style.display = 'none'; resEl.innerHTML=''; return; }
+
   const enemy1 = NAAM_GROUPS[(bg.id+4)%8];
   const enemy2 = NAAM_GROUPS[(gg.id+4)%8];
-  resEl.className = 'naam-compat-box show ' + compat.cls;
-  resEl.innerHTML = '<div class="naam-compat-title">' + compat.label + ' (' + compat.score + '/4)</div>'
-    + '<div class="naam-compat-detail">' + compat.detail + '</div>'
-    + '<div style="margin-top:8px; font-size:11px; color:var(--text-light); font-style:italic;">'
-    + '⚔ ' + bg.name + ' enemy → ' + enemy1.name + enemy1.emoji + ' &nbsp;|&nbsp; '
-    + '⚔ ' + gg.name + ' enemy → ' + enemy2.name + enemy2.emoji
-    + '</div>';
+
+  // Determine tier key
+  const tierKey = compat.cls.replace('naam-compat-',''); // same | good | neutral | bad
+
+  const tierMeta = {
+    same:    { vbCls:'nm-vb-same',    bridgeCls:'nm-bridge-score-same',    fillCls:'nm-fill-same',    pct:100, bridgeIcon:'💞', headerLabel:'UTTAM MILAN' },
+    good:    { vbCls:'nm-vb-good',    bridgeCls:'nm-bridge-score-good',    fillCls:'nm-fill-good',    pct:75,  bridgeIcon:'✅', headerLabel:'SHUBH MILAN' },
+    neutral: { vbCls:'nm-vb-neutral', bridgeCls:'nm-bridge-score-neutral', fillCls:'nm-fill-neutral', pct:50,  bridgeIcon:'🔶', headerLabel:'MADHYAM MILAN' },
+    bad:     { vbCls:'nm-vb-bad',     bridgeCls:'nm-bridge-score-bad',     fillCls:'nm-fill-bad',     pct:0,   bridgeIcon:'⚠️', headerLabel:'ASHAUB MILAN' },
+  }[tierKey] || { vbCls:'nm-vb-neutral', bridgeCls:'nm-bridge-score-neutral', fillCls:'nm-fill-neutral', pct:50, bridgeIcon:'🔶', headerLabel:'MILAN' };
+
+  const bLetter = bVal.slice(0,2).toUpperCase();
+  const gLetter = gVal.slice(0,2).toUpperCase();
+
+  resEl.style.display = 'block';
+  resEl.innerHTML = `
+    <div class="nm-result-card">
+
+      <!-- Header -->
+      <div class="nm-result-header">
+        <div class="nm-result-verdict-badge ${tierMeta.vbCls}">${tierMeta.headerLabel}</div>
+        <div class="nm-result-title">${compat.label}</div>
+        <div class="nm-result-subtitle">नाम मिलान स्कोर — Naam Milan Score</div>
+      </div>
+
+      <!-- Animal pair -->
+      <div class="nm-couple-row">
+        <div class="nm-animal-block">
+          <span class="nm-animal-emoji" style="animation-delay:0.05s">${bg.emoji}</span>
+          <div class="nm-animal-name">${bg.name}</div>
+          <div class="nm-animal-en">${bg.en}</div>
+          <div class="nm-animal-letter-badge">${bLetter}</div>
+        </div>
+
+        <div class="nm-bridge">
+          <span class="nm-bridge-icon">${tierMeta.bridgeIcon}</span>
+          <div class="nm-bridge-score ${tierMeta.bridgeCls}">${compat.score}</div>
+          <div class="nm-bridge-max">OUT OF 4</div>
+        </div>
+
+        <div class="nm-animal-block">
+          <span class="nm-animal-emoji" style="animation-delay:0.15s">${gg.emoji}</span>
+          <div class="nm-animal-name">${gg.name}</div>
+          <div class="nm-animal-en">${gg.en}</div>
+          <div class="nm-animal-letter-badge">${gLetter}</div>
+        </div>
+      </div>
+
+      <!-- Score bar -->
+      <div class="nm-score-bar-section">
+        <div class="nm-score-bar-label">
+          <span>NAAM ENERGY HARMONY</span>
+          <span>${compat.score}/4 POINTS</span>
+        </div>
+        <div class="nm-score-bar-bg">
+          <div class="nm-score-bar-fill ${tierMeta.fillCls}" style="width:${tierMeta.pct}%"></div>
+        </div>
+      </div>
+
+      <!-- Detail -->
+      <div class="nm-detail-section">
+        <div class="nm-detail-text">${compat.detail}</div>
+
+        <!-- Enemy indicators -->
+        <div class="nm-enemy-row">
+          <span class="nm-enemy-pill">⚔ ${bg.name} enemy → ${enemy1.name} ${enemy1.emoji}</span>
+          <span class="nm-enemy-pill">⚔ ${gg.name} enemy → ${enemy2.name} ${enemy2.emoji}</span>
+        </div>
+
+        <!-- Name meanings -->
+        <div class="nm-meaning-row">
+          <div class="nm-meaning-chip">
+            <div class="nm-meaning-chip-head">${bg.emoji} ${bg.name} — Bride's Energy</div>
+            <div class="nm-meaning-chip-body">${bg.meaning}</div>
+          </div>
+          <div class="nm-meaning-chip">
+            <div class="nm-meaning-chip-head">${gg.emoji} ${gg.name} — Groom's Energy</div>
+            <div class="nm-meaning-chip-body">${gg.meaning}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>`;
 }
 
 function buildNaamGroupRef() {
@@ -2658,6 +2992,61 @@ const RASHI_NAKS = {
   "Kumbha (Aquarius)":   ["Dhanishtha","Shatabhisha","Purva Bhadrapada"],
   "Meena (Pisces)":      ["Purva Bhadrapada","Uttara Bhadrapada","Revati"]
 };
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// NAKSHATRA PADA → RASHI MAP
+// For split nakshatras: which padas fall in which rashi
+// Format: { nakshatra: { rashiKey: [padas] } }
+// rashiKey matches the start of RASIS entries (e.g. "Mesha", "Vrishabha")
+// ═══════════════════════════════════════════════════════════════════════════════
+const NAK_PADA_RASHI = {
+  // Full nakshatra in one rashi → all 4 padas (default, no entry needed)
+  // Split nakshatras only:
+  "Krittika":         { "Mesha":   [1],       "Vrishabha": [2,3,4] },
+  "Mrigashira":       { "Vrishabha":[1,2],    "Mithuna":   [3,4]   },
+  "Punarvasu":        { "Mithuna": [1,2,3],   "Karka":     [4]     },
+  "Uttara Phalguni":  { "Simha":   [1],       "Kanya":     [2,3,4] },
+  "Chitra":           { "Kanya":   [1,2],     "Tula":      [3,4]   },
+  "Vishakha":         { "Tula":    [1,2,3],   "Vrishchika":[4]     },
+  "Uttara Ashadha":   { "Dhanu":   [1],       "Makara":    [2,3,4] },
+  "Dhanishtha":       { "Makara":  [1,2],     "Kumbha":    [3,4]   },
+  "Purva Bhadrapada": { "Kumbha":  [1,2,3],   "Meena":     [4]     },
+};
+
+// Given a nakshatra and rashi, return valid padas for that rashi
+function getValidPadas(nak, rashi) {
+  if (!nak || !rashi) return [1,2,3,4];
+  const splitData = NAK_PADA_RASHI[nak];
+  if (!splitData) return [1,2,3,4]; // not a split nakshatra — all 4 padas belong here
+  // Match rashi by starting word (e.g. "Vrishchika (Scorpio)" → "Vrishchika")
+  const rashiKey = rashi.split(' ')[0];
+  return splitData[rashiKey] || [1,2,3,4];
+}
+
+function filterCharan(person) {
+  const rashi  = document.getElementById(`${person}-rashi`).value;
+  const nak    = document.getElementById(`${person}-nak`).value;
+  const sel    = document.getElementById(`${person}-charan`);
+  const prevVal = sel.value;
+
+  const validPadas = getValidPadas(nak, rashi);
+
+  sel.innerHTML = '';
+  const ph = document.createElement('option');
+  ph.value = ''; ph.text = '— Select Charan —';
+  sel.add(ph);
+
+  validPadas.forEach(p => {
+    const o = document.createElement('option');
+    o.value = String(p); o.text = String(p);
+    sel.add(o);
+  });
+
+  // Restore previous value if still valid
+  if (validPadas.map(String).includes(prevVal)) {
+    sel.value = prevVal;
+  }
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // INIT
@@ -2707,6 +3096,7 @@ function filterNakshatras(person) {
   }
 
   updateDerived();
+  filterCharan(person);
 }
 
 function updateDerived() {
@@ -3339,11 +3729,13 @@ function buildNakTable() {
 // ═══════════════════════════════════════════════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════════════════════════════════════════════
-function showPanel(name) {
+function showPanel(name, btn) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('panel-'+name).classList.add('active');
-  event.target.classList.add('active');
+  // Use passed btn element, or fall back to event.target safely
+  const activeBtn = btn || (typeof event !== 'undefined' && event?.target);
+  if (activeBtn) activeBtn.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -3353,7 +3745,19 @@ function showKTab(name, btn) {
   document.getElementById('k-'+name).classList.add('active');
   // Find and activate the button
   document.querySelectorAll('.k-tab').forEach(t => {
-    if (t.getAttribute('onclick').includes("'"+name+"'")) t.classList.add('active');
+    if (t.getAttribute('onclick') && t.getAttribute('onclick').includes("'"+name+"'")) t.classList.add('active');
+  });
+}
+
+function showRefTab(name) {
+  ['cheat','yoni','verdict'].forEach(tab => {
+    const el = document.getElementById('ref-'+tab);
+    const btn = document.getElementById('ref-tab-btn-'+tab);
+    if (el) {
+      el.style.display = (tab === name) ? 'block' : 'none';
+      if (tab === name) el.style.animation = 'fadeIn 0.3s ease';
+    }
+    if (btn) btn.classList.toggle('active', tab === name);
   });
 }
 
@@ -3433,7 +3837,7 @@ function doNewMatch() {
   // Hide results
   document.getElementById('results').classList.add('hidden');
   // Scroll to top of form
-  document.querySelector('.couple-grid').scrollIntoView({behavior:'smooth', block:'start'});
+  window.scrollTo({top:0, behavior:'smooth'});
 }
 
 // Close confirm on overlay click
@@ -3441,7 +3845,6 @@ document.addEventListener('click', (e) => {
   if (e.target.id === 'confirmOverlay') closeConfirm();
 });
 
-populateNakAdvanced();
 init();
 
 // ═══════════════════════════════════════════════
@@ -3455,7 +3858,7 @@ const NAK_FULL_DATA = [
   { name:"Krittika",     lord:"Sun",     gana:"Rakshasa",nadi:"Antya",  yoni:"Mesha",   devata:"Agni",            rashi:"Aries/Taurus",element:"Fire",  trikon:3 },
   { name:"Rohini",       lord:"Moon",    gana:"Manushya",nadi:"Antya",  yoni:"Sarpa",   devata:"Brahma",          rashi:"Taurus",      element:"Earth", trikon:4 },
   { name:"Mrigashira",   lord:"Mars",    gana:"Deva",    nadi:"Madhya", yoni:"Sarpa",   devata:"Soma",            rashi:"Taurus/Gemini",element:"Earth",trikon:5 },
-  { name:"Ardra",        lord:"Rahu",    gana:"Manushya",nadi:"Aadi",   yoni:"Shwana",  devata:"Rudra",           rashi:"Gemini",      element:"Air",   trikon:6 },
+  { name:"Ardra",        lord:"Rahu",    gana:"Manushya",nadi:"Aadi",   yoni:"Shwan",   devata:"Rudra",           rashi:"Gemini",      element:"Air",   trikon:6 },
   { name:"Punarvasu",    lord:"Jupiter", gana:"Deva",    nadi:"Aadi",   yoni:"Marjara", devata:"Aditi",           rashi:"Gemini/Cancer",element:"Air",  trikon:7 },
   { name:"Pushya",       lord:"Saturn",  gana:"Deva",    nadi:"Madhya", yoni:"Mesha",   devata:"Brihaspati",      rashi:"Cancer",      element:"Water", trikon:8 },
   { name:"Ashlesha",     lord:"Mercury", gana:"Rakshasa",nadi:"Antya",  yoni:"Marjara", devata:"Nagas",           rashi:"Cancer",      element:"Water", trikon:9 },
@@ -3468,14 +3871,14 @@ const NAK_FULL_DATA = [
   { name:"Vishakha",     lord:"Jupiter", gana:"Rakshasa",nadi:"Aadi",   yoni:"Vyaghra", devata:"Indra-Agni",      rashi:"Libra/Scorpio",element:"Air",  trikon:7 },
   { name:"Anuradha",     lord:"Saturn",  gana:"Deva",    nadi:"Madhya", yoni:"Mriga",   devata:"Mitra",           rashi:"Scorpio",     element:"Water", trikon:8 },
   { name:"Jyeshtha",     lord:"Mercury", gana:"Rakshasa",nadi:"Antya",  yoni:"Mriga",   devata:"Indra",           rashi:"Scorpio",     element:"Water", trikon:9 },
-  { name:"Mula",         lord:"Ketu",    gana:"Rakshasa",nadi:"Aadi",   yoni:"Shwana",  devata:"Nirriti",         rashi:"Sagittarius", element:"Fire",  trikon:1 },
-  { name:"Purva Ashadha",lord:"Venus",   gana:"Manushya",nadi:"Madhya", yoni:"Vrishchika",devata:"Apas",          rashi:"Sagittarius", element:"Fire",  trikon:2 },
+  { name:"Mula",         lord:"Ketu",    gana:"Rakshasa",nadi:"Aadi",   yoni:"Shwan",   devata:"Nirriti",         rashi:"Sagittarius", element:"Fire",  trikon:1 },
+  { name:"Purva Ashadha",lord:"Venus",   gana:"Manushya",nadi:"Madhya", yoni:"Vanara",  devata:"Apas",            rashi:"Sagittarius", element:"Fire",  trikon:2 },
   { name:"Uttara Ashadha",lord:"Sun",    gana:"Manushya",nadi:"Antya",  yoni:"Nakula",  devata:"Vishvedevas",     rashi:"Sagittarius/Capricorn",element:"Fire",trikon:3 },
-  { name:"Shravana",     lord:"Moon",    gana:"Deva",    nadi:"Antya",  yoni:"Vrishchika",devata:"Vishnu",        rashi:"Capricorn",   element:"Earth", trikon:4 },
+  { name:"Shravana",     lord:"Moon",    gana:"Deva",    nadi:"Antya",  yoni:"Vanara",  devata:"Vishnu",        rashi:"Capricorn",   element:"Earth", trikon:4 },
   { name:"Dhanishtha",   lord:"Mars",    gana:"Rakshasa",nadi:"Madhya", yoni:"Simha",   devata:"Ashta Vasus",     rashi:"Capricorn/Aquarius",element:"Earth",trikon:5 },
   { name:"Shatabhisha",  lord:"Rahu",    gana:"Rakshasa",nadi:"Aadi",   yoni:"Ashwa",   devata:"Varuna",          rashi:"Aquarius",    element:"Air",   trikon:6 },
-  { name:"Purva Bhadra", lord:"Jupiter", gana:"Manushya",nadi:"Aadi",   yoni:"Simha",   devata:"Aja Ekapada",     rashi:"Aquarius/Pisces",element:"Air", trikon:7 },
-  { name:"Uttara Bhadra",lord:"Saturn",  gana:"Manushya",nadi:"Madhya", yoni:"Go",      devata:"Ahir Budhnya",    rashi:"Pisces",      element:"Water", trikon:8 },
+  { name:"Purva Bhadrapada", lord:"Jupiter", gana:"Manushya",nadi:"Aadi",   yoni:"Simha",   devata:"Aja Ekapada",     rashi:"Aquarius/Pisces",element:"Air", trikon:7 },
+  { name:"Uttara Bhadrapada",lord:"Saturn",  gana:"Manushya",nadi:"Madhya", yoni:"Go",      devata:"Ahir Budhnya",    rashi:"Pisces",      element:"Water", trikon:8 },
   { name:"Revati",       lord:"Mercury", gana:"Deva",    nadi:"Antya",  yoni:"Gaja",    devata:"Pushan",          rashi:"Pisces",      element:"Water", trikon:9 },
 ];
 
@@ -4020,6 +4423,8 @@ function populateNakAdvanced() {
   selects.forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
+    // Clear existing options first to prevent duplicates
+    el.innerHTML = '<option value="">— Select Nakshatra —</option>';
     NAKSHATRAS.forEach(n => {
       const opt = document.createElement('option');
       opt.value = n; opt.textContent = n;
@@ -4028,6 +4433,7 @@ function populateNakAdvanced() {
   });
 }
 
+// Call once after DOM is ready
 populateNakAdvanced();
 
 </script>
